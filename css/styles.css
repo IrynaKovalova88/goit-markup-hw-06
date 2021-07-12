@@ -1,0 +1,626 @@
+/*=============WebStudio=============*/
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+  --accent-color: #2196f3;
+  --font-color: #212121;
+  --secondary-color: #ffffff;
+  --logo-header-color: #000000;
+  --logo-part-color: #2196f3;
+  --text-color: #757575;
+  --hero-background-color: #c4c4c4;
+  --footer-background-color: #2f303a;
+  --button-background-color: #188ce8;
+  --portfolio-button-color: #f5f4fa;
+  --mail-link-color: rgba(255, 255, 255, 0.6);
+  --border-header: #ececec;
+  --border-portfolio: #eeeeee;
+  --social-icon: #afb1b8;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--font-color);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Стили для обнуления верхних отступов у элементов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+/* Класс для обнуления базовых свойств у списков (ul, ol) */
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Класс для обнуления базовых свойств у ссылок */
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Класс для обнуления базовых свойств у кнопки */
+.button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Свойства для корректного отображения картинок */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Свойства для обнуления курсива у address */
+
+address {
+  font-style: inherit;
+}
+
+/* Класс чтобы визуально спрятать элементы */
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/*======= Components ========*/
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/*======= End Components ========*/
+
+/*========= HEADER ========*/
+.header {
+  border-bottom: 1px solid var(--border-header);
+}
+.header-container,
+.navigation,
+.menu,
+.contacts,
+.logo,
+.contacts-link {
+  display: flex;
+  align-items: center;
+}
+.menu-item,
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
+.contacts {
+  margin-left: auto;
+}
+.logo {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--logo-header-color);
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+.logo-part {
+  color: var(--logo-part-color);
+}
+.menu-link,
+.contacts-link {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.menu-link {
+  color: inherit;
+  transition: color 250ms var(--timing-function);
+}
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--accent-color);
+}
+.menu-link.current {
+  color: var(--accent-color);
+  position: relative;
+}
+.menu-link.current::after {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.contacts-link {
+  color: var(--text-color);
+  transition: color 250ms var(--timing-function);
+}
+.contacts-link:hover,
+.contacts-link:focus {
+  color: var(--accent-color);
+}
+.icon-header {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+/*========= END HEADER ========*/
+
+/*========= HERO ========*/
+.hero .container {
+  width: 696px;
+}
+.hero {
+  background-color: var(--hero-background-color);
+  padding: 200px 0;
+  text-align: center;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  background-size: cover;
+  max-width: 1600px;
+  background-position: center;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+}
+
+.hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.364;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+.modal-button {
+  border-radius: 4px;
+  border: none;
+  padding: 10px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  transition: background-color 250ms var(--timing-function);
+}
+.modal-button:hover,
+.modal-button:focus {
+  background-color: var(--button-background-color);
+}
+/*========= END HERO ========*/
+
+/*========= ADVANTAGES ========*/
+.advantages-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background: var(--portfolio-button-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.advantages-title {
+  font-weight: 700;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.advantages-text {
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.advantages-item {
+  flex-basis: calc((100% - 120px) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.advantages {
+  padding-bottom: 0;
+}
+/*========= END ADVANTAGES ========*/
+
+/*========= GALLERY ========*/
+.gallery-title,
+.team-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.gallery-item {
+  flex-basis: calc((100% - 90px) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.gallery-img {
+  position: relative;
+}
+.overlay-gallery {
+  position: absolute;
+  top: 224px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  padding: 27px 0;
+  margin: 0;
+}
+
+/*========= END GALLERY ========*/
+
+/*========= TEAM ========*/
+.team {
+  background-color: var(--portfolio-button-color);
+}
+.team-title-item,
+.team-text {
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+.team-title-item {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.team-text {
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  text-align: center;
+}
+.team-item {
+  flex-basis: calc((100% - 120px) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.social-list {
+  display: flex;
+  justify-content: space-between;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--social-icon);
+  transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+.social-link:hover,
+.social-link:focus {
+  fill: var(--secondary-color);
+  background-color: var(--accent-color);
+}
+.team-item-content {
+  padding: 30px 32px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+/*========= END TEAM ========*/
+
+/*========= CLIENTS ========*/
+
+.clients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.167;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--social-icon);
+  border-radius: 4px;
+  fill: var(--social-icon);
+  transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
+}
+/*========= END CLIENTS ========*/
+
+/*========= PORTFOLIO ========*/
+.section-portfolio {
+  padding-top: 64px;
+  padding-bottom: 124px;
+}
+.portfolio-button {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background-color: var(--portfolio-button-color);
+  cursor: pointer;
+  padding: 6px 22px;
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
+}
+.portfolio-button:hover,
+.portfolio-button:focus {
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+}
+.portfolio-button:hover,
+.portfolio-button:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+.portfolio-jobs-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--font-color);
+  margin-bottom: 4px;
+}
+.portfolio-jobs-text {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+.portfolio-item {
+  margin-right: 8px;
+}
+.portfolio-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.portfolio-jobs-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.portfolio-jobs-item {
+  flex-basis: calc((100% - 90px) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.portfolio-jobs-content {
+  display: block;
+  padding: 20px 24px;
+  border-right: 1px solid var(--border-portfolio);
+  border-bottom: 1px solid var(--border-portfolio);
+  border-left: 1px solid var(--border-portfolio);
+}
+.portfolio-jobs-link {
+  display: block;
+  transition: box-shadow 250ms var(--timing-function), transform 250ms var(--timing-function);
+}
+.portfolio-jobs-link:hover,
+.portfolio-jobs-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-jobs-img {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: var(--secondary-color);
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03em;
+  overflow: auto;
+  padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+}
+.portfolio-jobs-link:hover .overlay,
+.portfolio-jobs-link:focus .overlay {
+  transform: translateY(0%);
+}
+/*========= END PORTFOLIO ========*/
+
+/*========= FOOTER ========*/
+.footer {
+  background-color: var(--footer-background-color);
+  padding: 60px 0;
+}
+.logo-footer {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+}
+
+.address {
+  font-size: inherit;
+  margin-top: 20px;
+}
+.address-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+.address-link,
+.mail-link {
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+}
+.address-link {
+  color: var(--secondary-color);
+  transition: color 250ms var(--timing-function);
+}
+.address-link:hover,
+.address-link:focus {
+  color: var(--accent-color);
+}
+.mail-link {
+  color: var(--mail-link-color);
+  transition: color 250ms var(--timing-function);
+}
+.mail-link:hover,
+.mail-link:focus {
+  color: var(--accent-color);
+}
+.social-text {
+  font-weight: 700;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+.footer-social-list {
+  display: flex;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms var(--timing-function);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.address-container {
+  margin-right: 70px;
+}
+.footer-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+/*========= END FOOTER ========*/
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--secondary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--logo-header-color);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
