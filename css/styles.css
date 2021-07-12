@@ -579,6 +579,8 @@ address {
 }
 /*========= END FOOTER ========*/
 
+/*========= MODAL BUTTON ========*/
+
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -614,13 +616,24 @@ address {
 
 .close-button {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 18px;
-  height: 18px;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
   color: var(--logo-header-color);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   padding: 0;
 }
+.close-button {
+  transition: color 250ms var(--timing-function);
+}
+.close-button:hover,
+.close-button:focus {
+  fill: var(--accent-color);
+}
+
+/*========= END MODAL BUTTON ========*/
