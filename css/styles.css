@@ -76,7 +76,7 @@ address {
 
 .visually-hidden {
   position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0 !important;
   border: 0 !important;
@@ -517,6 +517,7 @@ address {
 }
 
 .address {
+  width: 230px;
   margin-top: 20px;
 }
 .address-item:not(:last-child) {
@@ -582,6 +583,7 @@ address {
 .social-container {
   margin-right: 93px;
 }
+
 .subscription-text {
   font-weight: 700;
   line-height: 1.143;
@@ -602,14 +604,14 @@ address {
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: var(--secondary-color);
+  vertical-align: middle;
+  float: left;
   margin-right: 12px;
-  outline: none;
 }
 .subscription-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 .subscription-submit {
-  position: relative;
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -617,20 +619,24 @@ address {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
-
   letter-spacing: 0.06em;
   color: var(--secondary-color);
   padding-top: 10px;
-  padding-right: 62px;
+  padding-right: 28px;
   padding-bottom: 10px;
   padding-left: 29px;
   cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 250ms var(--timing-function);
 }
 .subscription-send {
-  position: absolute;
-  left: 148px;
-  top: 13px;
   fill: var(--secondary-color);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.subscription-submit:hover,
+.subscription-submit:focus {
+  background-color: var(--button-background-color);
 }
 /*========= END FOOTER ========*/
 
@@ -664,6 +670,7 @@ address {
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
+  padding: 40px;
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.7);
@@ -682,20 +689,17 @@ address {
   background-color: transparent;
   cursor: pointer;
   padding: 0;
-}
-.close-button {
   transition: color 250ms var(--timing-function);
 }
 .close-button:hover,
 .close-button:focus {
   fill: var(--accent-color);
 }
-.contact-form {
+.modal-form {
   display: flex;
   flex-direction: column;
-  padding: 40px;
 }
-.contact-form-title {
+.modal-form-title {
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -704,7 +708,7 @@ address {
   letter-spacing: 0.03em;
   margin-bottom: 12px;
 }
-.contact-form-field {
+.modal-form-field {
   font-size: 12px;
   line-height: 1.167;
   letter-spacing: 0.01em;
@@ -716,7 +720,7 @@ address {
   display: block;
   margin-top: 4px;
 }
-.contact-form-input {
+.modal-form-input {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -724,7 +728,7 @@ address {
   padding-left: 42px;
   transition: border-color 250ms var(--timing-function);
 }
-.contact-form-input:focus {
+.modal-form-input:focus {
   outline: none;
   border-color: var(--accent-color);
 }
@@ -737,10 +741,10 @@ address {
   fill: var(--font-color);
   transition: fill 250ms var(--timing-function);
 }
-.contact-form-input:focus + .modal-form-icon {
+.modal-form-input:focus + .modal-form-icon {
   fill: var(--accent-color);
 }
-.contact-form-message {
+.modal-form-message {
   width: 100%;
   height: 120px;
   padding: 12px 16px;
@@ -750,22 +754,26 @@ address {
   margin-top: 4px;
   transition: border-color 250ms var(--timing-function);
 }
-.contact-form-message::placeholder {
+.modal-form-message::placeholder {
   line-height: 1.143;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-.contact-form-message:focus {
+.modal-form-message:focus {
   outline: none;
   border-color: var(--button-background-color);
 }
-.contact-form-checkbox:checked + .contact-form-checkbox-label::before {
+.modal-form-checkbox:checked + .modal-form-checkbox-label::before {
   background-color: var(--accent-color);
   background-image: url(../images/check.svg);
   background-position: center;
   border: none;
 }
-.contact-form-checkbox-label {
+.modal-form-checkbox:focus + .modal-form-checkbox-label::before {
+  border-color: var(--accent-color);
+}
+
+.modal-form-checkbox-label {
   display: flex;
   align-items: center;
   line-height: 1.714;
@@ -775,7 +783,7 @@ address {
   margin-bottom: 30px;
 }
 
-.contact-form-checkbox-label::before {
+.modal-form-checkbox-label::before {
   display: block;
   content: '';
   width: 16px;
@@ -786,12 +794,12 @@ address {
   margin-left: 13px;
   cursor: pointer;
 }
-.contact-form-link {
+.modal-form-link {
   text-decoration-line: underline;
   color: var(--accent-color);
 }
 
-.contact-form-submit {
+.modal-form-submit {
   display: block;
   margin: 0 auto;
   font-weight: 700;
@@ -813,8 +821,8 @@ address {
   cursor: pointer;
   transition: background-color 250ms var(--timing-function);
 }
-.contact-form-submit:hover,
-.contact-form-submit:focus {
+.modal-form-submit:hover,
+.modal-form-submit:focus {
   background-color: var(--button-background-color);
 }
 
